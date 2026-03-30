@@ -1,0 +1,14 @@
+name: 'pokemon_dbt'
+version: '1.0.0'
+config-version: 2
+profile: 'pokemon_dbt'
+model-paths: ["models"]
+
+models:
+  pokemon_dbt:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: ephemeral
+    marts:
+      +materialized: table
