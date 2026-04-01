@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: fct_pokemon_obt # El nombre de tu modelo final
+    description: "Tabla final de Pokémon"
+    columns:
+      - name: pokemon_id
+        tests:
+          - unique
+          - not_null
+          - dbt_expectations.expect_column_to_exist
+      - name: pokemon_name
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: text
+      - name: hp
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 500

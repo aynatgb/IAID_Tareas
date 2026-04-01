@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: airbyte_curso
+    database: airbyte_curso
+    schema: main
+    tables:
+      - name: pokemon  # Cambiado para que coincida con tu imagen
